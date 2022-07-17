@@ -2,7 +2,6 @@ package com.alechoskins.recipepricecompare.controller;
 
 import com.alechoskins.recipepricecompare.dto.WmProductDto;
 import com.alechoskins.recipepricecompare.service.WmpService;
-import com.alechoskins.recipepricecompare.repository.WmProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +18,9 @@ import java.util.List;
 public class WmpController {
 
     WmpService wmpService;
-    WmProductRepository repo;
 
     @Autowired
-    public WmpController(WmProductRepository repo, WmpService wmpService) throws IOException {
-        this.repo=repo;
+    public WmpController(WmpService wmpService) throws IOException {
         this.wmpService=wmpService;
     }
 
