@@ -1,0 +1,21 @@
+{
+  "id": "recipe-price-compare-manifest",
+  "api": {
+    "config_vars_prefix": "RECIPE_PRICE_COMPARE_MANIFEST",
+    "config_vars": [
+      "RECIPE_PRICE_COMPARE_MANIFEST_URL"
+    ],
+    "password": "RrF4DcjdyeBjJv4HVoncD7UvXOvbD7xu",
+    "sso_salt": "PsWym5NgTnpAiS90gqT0aGjiQ6w1M718",
+    "regions": [
+      "us"
+    ],
+    "requires": [],
+    "production": {
+      "base_url": "https://myaddon.com/heroku/resources",
+      "sso_url": "https://myaddon.com/sso/login"
+    },
+    "version": "3"
+  },
+  "name": "MyAddon"
+}
