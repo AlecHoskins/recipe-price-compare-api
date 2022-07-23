@@ -19,12 +19,14 @@ public class UserController {
     public void login(){
         
     }
+
     //register
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/register")
     public void register(@Valid @RequestBody UserDto userDto){
         userService.register(userDto);
     }
+
     //delete account
 
 }

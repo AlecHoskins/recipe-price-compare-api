@@ -1,10 +1,15 @@
 package com.alechoskins.recipepricecompare.model;
 
+import com.alechoskins.recipepricecompare.security.model.Role;
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Objects;
+
+import static javax.persistence.FetchType.EAGER;
 
 @Entity
 @Table(name = "user")
@@ -16,7 +21,9 @@ import java.util.Objects;
 @AllArgsConstructor
 public class User {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @Column(name = "username")
     private String username;
 
@@ -24,7 +31,8 @@ public class User {
     private String password;
 
     private boolean active;
-    private String role;
+    @ManyToMany(fetch = EAGER)
+    private Collection<Role> roles = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
