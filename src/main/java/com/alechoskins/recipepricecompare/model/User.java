@@ -3,10 +3,7 @@ package com.alechoskins.recipepricecompare.model;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -25,6 +22,9 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    private boolean active;
+    private String role;
 
     @Override
     public boolean equals(Object o) {
